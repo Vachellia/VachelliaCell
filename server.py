@@ -31,5 +31,5 @@ def callback(ch, method, properties, in_data):
 
 
 channel.basic_consume(queue="cell_1", on_message_callback=callback, auto_ack=True)
-print(f"[ {colored('STARTED', 'green')} ] -> [ To exit press CTRL+C ]")
+print(f"[ {colored('STARTED', 'green')} ] -> [ To exit press CTRL+C ]\n")
 channel.start_consuming()
