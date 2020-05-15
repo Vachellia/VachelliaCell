@@ -25,7 +25,6 @@ channel.queue_declare(queue="master")
 
 
 def callback(ch, method, properties, in_data):
-    # print(f"[{colored('OK', 'green')}][callback][in_data] -> [ {in_data} ]")
     out_data = vachellia.operate_request(in_data)
     channel.basic_publish(exchange="", routing_key="master", body=out_data)
 
